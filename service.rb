@@ -1,6 +1,8 @@
 require 'sinatra'
 require './sequel-demo.rb'
-require 'multi_json'
+require './init.rb'
+require './model.rb'
+
 
 
 get '/books' do

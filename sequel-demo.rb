@@ -1,10 +1,7 @@
 require "rubygems"
-require "sequel"
 require 'logger'
-
-# connect to an in-memory database
-#DB = Sequel.connect('sqlite://blog.db', loggers: [Logger.new($stdout)])
-DB = Sequel.connect('sqlite://blog.db')
+require './init.rb'
+require './model.rb'
 
 # create an items table
 if DB.table_exists? :authors
