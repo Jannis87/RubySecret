@@ -48,6 +48,14 @@ end
 class Book < Sequel::Model
     String @title
     many_to_many :authors, class: :Author
+
+    def to_api
+        {
+          id: id,
+          name: title,
+          authors: authors.map{ |author| author.id }
+        }
+      end
 end
 
   book = Book.create(title: "Just for Fun2")
